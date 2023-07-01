@@ -13,6 +13,21 @@ PRODUCT_PACKAGES += \
 # Overlays
 PRODUCT_ENFORCE_RRO_TARGETS := *
 
+# Rootdir
+PRODUCT_PACKAGES += \
+    fstab.mt8781 \
+    fstab.mt8781.ramdisk \
+    init.cgroup.rc \
+    init.connectivity.rc \
+    init.modem.rc \
+    init.mt8781.rc \
+    init.mt8781.usb.rc \
+    init.mtkgki.rc \
+    init.project.rc \
+    init.sensor_2_0.rc \
+    init.stnfc.rc \
+    ueventd.mt8781.rc
+
 # Shipping API level
 PRODUCT_SHIPPING_API_LEVEL := 34
 
