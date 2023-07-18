@@ -1,0 +1,6 @@
+prebuilt_etc {
+    name: "init.recovery.mt8781.rc",
+    src: "root/init.recovery.mt8781.rc",
+    sub_dir: "init",
+    recovery: true,
+}
