@@ -109,6 +109,14 @@ PRODUCT_PACKAGES += \
     android.hardware.nfc@1.2-service.st
 
 # Overlays
+PRODUCT_PACKAGES += \
+    FrameworksResOverlayjagar \
+    LineageSDKResCommon \
+    WifiResOverlayjagar
+
+DEVICE_PACKAGE_OVERLAYS += \
+    $(LOCAL_PATH)/overlay-lineage
+
 PRODUCT_ENFORCE_RRO_TARGETS := *
 
 # Permissions
