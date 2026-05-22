@@ -30,9 +30,8 @@ def lib_fixup_vendor_suffix(lib: str, partition: str, *args, **kwargs):
 
 lib_fixups: lib_fixups_user_type = {
     **lib_fixups,
-    (): lib_fixup_vendor_suffix,
+    ('vendor.mediatek.hardware.videotelephony@1.0'): lib_fixup_vendor_suffix,
 }
-
 
 blob_fixups: blob_fixups_user_type = {
     (
@@ -96,15 +95,6 @@ blob_fixups: blob_fixups_user_type = {
         .clear_symbol_version('AHardwareBuffer_unlock')
         .clear_symbol_version('AHardwareBuffer_createFromHandle')
         .clear_symbol_version('AHardwareBuffer_getNativeHandle'),
-    (
-        'vendor/bin/nfcstackp-vendor',
-        'vendor/bin/STFlashTool',
-        'vendor/lib/libnvram.so',
-        'vendor/lib64/libnvram.so',
-        'vendor/lib/libsysenv.so',
-        'vendor/lib64/libsysenv.so',
-    ): blob_fixup()
-        .add_needed('libbase_shim.so'),
     (
         'vendor/lib/libspeech_enh_lib.so',
         'vendor/lib64/libspeech_enh_lib.so',
