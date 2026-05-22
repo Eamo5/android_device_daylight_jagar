@@ -25,13 +25,6 @@ prebuilt_etc {
 }
 
 prebuilt_etc {
-    name: "init.modem.rc",
-    src: "etc/init.modem.rc",
-    sub_dir: "init/hw",
-    vendor: true,
-}
-
-prebuilt_etc {
     name: "init.mt8781.rc",
     src: "etc/init.mt8781.rc",
     sub_dir: "init/hw",
@@ -62,13 +55,6 @@ prebuilt_etc {
 prebuilt_etc {
     name: "init.sensor_2_0.rc",
     src: "etc/init.sensor_2_0.rc",
-    sub_dir: "init/hw",
-    vendor: true,
-}
-
-prebuilt_etc {
-    name: "init.stnfc.rc",
-    src: "etc/init.stnfc.rc",
     sub_dir: "init/hw",
     vendor: true,
 }

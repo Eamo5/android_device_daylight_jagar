@@ -6,16 +6,9 @@ import /vendor/etc/init/hw/init.project.rc
 import /system_ext/etc/init/hw/init.aee.rc
 import /FWUpgradeInit.rc
 import /vendor/etc/init/hw/init.aee.rc
-import /vendor/etc/init/hw/init.volte.rc
 import /vendor/etc/init/hw/init.mal.rc
 import /vendor/etc/init/hw/init.sensor_2_0.rc
 import /vendor/etc/init/hw/init.cgroup.rc
-import /vendor/etc/init/hw/init.stnfc.rc
-import /system/etc/init/hw/init.stnfc.rc
-
-# init.modem.rc must be the LAST rc file because vold.post_fs_data_done is set in it
-import /vendor/etc/init/hw/init.modem.rc
-# *** DO NOT import the new rc file after this line ***
 
 on early-init
     write /proc/bootprof "INIT:early-init"
@@ -74,7 +67,7 @@ on charger
     chmod 0660 /dev/spm
     chown system system /dev/spm
     start spm_script
-    chmod 0666 /dev/kmsg
+    chmod 0600 /dev/kmsg
     chmod 0775 /mnt/vendor
     mkdir /mnt/vendor/nvcfg
     mount ext4 /dev/block/by-name/nvcfg /mnt/vendor/nvcfg rw wait
@@ -118,7 +111,6 @@ on fs
     write /proc/bootprof "INIT:Mount_START"
     write /sys/kernel/tracing/trace_marker "B|1|Mount"
     mount_all --early
-    exec /system/bin/tune2fs -O has_journal -u 10010 -r 4096 /dev/block/by-name/userdata
     write /sys/kernel/tracing/trace_marker "E"
     write /proc/bootprof "INIT:Mount_END"
 
@@ -268,7 +260,8 @@ on post-fs-data
 
 # GPS
     chmod 0775 /vendor/xbin/MPED
-    chmod 0666 /dev/gps_emi
+    chmod 0660 /dev/gps_emi
+    chown gps system /dev/gps_emi
 
 # -----------------------
 # Add by MTK
@@ -325,20 +318,8 @@ on post-fs-data
     chown root diag /sys/module/tpd_debug/parameters/tpd_em_log
     chown root diag /sys/module/tpd_debug/parameters/tpd_em_log_to_fs
 
-    chown root diag /sys/module/mtk_touchscreen_hodafonehw/parameters/tpd_calmat
-    chown root diag /sys/module/mtk_touchscreen_hodafonehw/parameters/tpd_em_debounce_time
-    chown root diag /sys/module/mtk_touchscreen_hodafonehw/parameters/tpd_mode
-    chown root diag /sys/module/mtk_touchscreen_hodafonehw/parameters/tpd_em_debounce_time0
-    chown root diag /sys/module/mtk_touchscreen_hodafonehw/parameters/tpd_em_debounce_time1
-    chown root diag /sys/module/mtk_touchscreen_hodafonehw/parameters/tpd_em_spl_num
-    chown root diag /sys/module/mtk_touchscreen_hodafonehw/parameters/tpd_em_pressure_threshold
-    chown root diag /sys/module/mtk_touchscreen_hodafonehw/parameters/tpd_em_auto_time_interval
-    chown root diag /sys/module/mtk_touchscreen_hodafonehw/parameters/tpd_em_sample_cnt
-    chown root diag /sys/module/mtk_touchscreen_hodafonehw/parameters/tpd_em_asamp
-    chown root diag /sys/module/mtk_touchscreen_hodafonehw/parameters/tpd_em_log
-    chown root diag /sys/module/mtk_touchscreen_hodafonehw/parameters/tpd_em_log_to_fs
-
-    chmod 0666 /dev/pmem_multimedia
+    chmod 0660 /dev/pmem_multimedia
+    chown system media /dev/pmem_multimedia
 
     # set ptmx group to non-root
     chown root radio /dev/ptmx
@@ -388,7 +369,7 @@ on post-fs-data
     chown root radio /sys/devices/platform/Accdet_Driver/driver/accdet_call_state
 
     #Fingerprint
-    chmod 0666 /dev/goodix_fp
+    chmod 0660 /dev/goodix_fp
 
     #v4l2 codec
     chmod 0660 /dev/vcu
@@ -544,7 +525,7 @@ on post-fs-data
 
 
     # JPEG
-    chmod 0666 /proc/mtk_jpeg
+    chmod 0660 /proc/mtk_jpeg
 
     # almk
     chmod 0440 /dev/mtk_almk
@@ -696,7 +677,7 @@ on post-fs-data
     chmod 0660 /dev/usip
     chown media media /dev/usip
 
-    chmod 0666 /dev/uio0
+    chmod 0660 /dev/uio0
 
     #otp
     chmod 0660 /proc/driver/otp
@@ -705,7 +686,7 @@ on post-fs-data
     # secure memory
     chown system system /proc/secmem0
 
-    chmod 0666 /dev/exm0
+    chmod 0660 /dev/exm0
 
 
 	#Thermal
@@ -1072,5 +1053,3 @@ service osi /system/bin/osi
     disabled
     oneshot
     #seclabel u:r:osi:s0
-
-
