@@ -1,4 +1,4 @@
-mtk_touchscreen_hodafonehw.ko
+wacom_i2c.ko
 mkp.ko
 bootprof.ko
 dbgtop-drm.ko
@@ -10,7 +10,6 @@ monitor_hang.ko
 mtk_printk_ctrl.ko
 log_store.ko
 nvmem_mtk-devinfo.ko
-panel-q20-hd720-lcm-dsi-vdo.ko
 mtk_wdt.ko
 sec-rng.ko
 device-apc-common.ko
@@ -172,4 +171,3 @@ uload_ind.ko
 upm6922_charger.ko
 load_track.ko
 wl2868c-regulator.ko
-st21nfc.ko

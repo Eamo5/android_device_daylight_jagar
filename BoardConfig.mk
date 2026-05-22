@@ -76,10 +76,10 @@ DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := hardware/mediatek/vintf/mediatek_f
 # Kernel
 BOARD_KERNEL_IMAGE_NAME := Image.gz
 TARGET_KERNEL_ARCH := arm64
-TARGET_KERNEL_SOURCE := kernel/daylight/mt6789
-TARGET_KERNEL_CONFIG := gki_defconfig mgk.config entry_level.config jagar.config
-TARGET_KERNEL_CLANG_VERSION := r416183b
-TARGET_KERNEL_CLANG_PATH := $(abspath .)/prebuilts/clang/kernel/$(HOST_PREBUILT_TAG)/clang-$(TARGET_KERNEL_CLANG_VERSION)
+# Temporary bring-up kernel until Daylight releases GPL kernel source.
+# TARGET_PREBUILT_KERNEL is deprecated but keeps stock vendor modules/dtbo ABI
+# matched during initial LineageOS bring-up.
+TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilts/kernel/Image.gz
 
 # Kernel Modules
 BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD := $(strip $(shell cat $(DEVICE_PATH)/kernel/modules.load.ramdisk))

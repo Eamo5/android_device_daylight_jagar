@@ -1,0 +1,10 @@
+source=20260210.1745.1407.jagar.user-ota/extracted_20260521_151255/boot.img
+header_version=4
+header_size=1584
+kernel_size=19558146
+ramdisk_size=1380092
+os_version_raw=0x1800017b
+os_version=12.0.0
+os_patch_level=2023-11
+cmdline=
+kernel_sha256=0b091bff7bbbd41b3f9ca26564686e0d7cb735186feaae5f00be1fa93e8907ea
