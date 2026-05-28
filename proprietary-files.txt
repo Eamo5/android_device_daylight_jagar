@@ -9,25 +9,59 @@
 # keep only the MTK platform primary HAL blob.
 vendor/lib/hw/audio.primary.mt6789.so
 vendor/lib64/hw/audio.primary.mt6789.so
+vendor/lib/libaudiotoolkit_vendor.so
+vendor/lib/libbwc.so
+vendor/lib/vendor.mediatek.hardware.audio@7.1.so
+vendor/lib/vendor.mediatek.hardware.bluetooth.audio@2.1.so
+vendor/lib/vendor.mediatek.hardware.bluetooth.audio@2.2.so
+vendor/lib64/libaudiotoolkit_vendor.so
+vendor/lib64/libbwc.so
+vendor/lib64/vendor.mediatek.hardware.audio@7.1.so
+vendor/lib64/vendor.mediatek.hardware.bluetooth.audio@2.1.so
+vendor/lib64/vendor.mediatek.hardware.bluetooth.audio@2.2.so
 
 # Bluetooth, boot, gatekeeper, keymint, and health HALs are provided by
 # AOSP/Lineage/MediaTek source packages declared in device.mk or the standard build.
 
 # Graphics / display / PQ
 # Composer service is built from source in device.mk; keep the MTK display/GPU/PQ blobs.
-vendor/bin/hw/android.hardware.graphics.allocator@4.0-service-mediatek
-vendor/bin/hw/android.hardware.graphics.allocator@4.0-service-mediatek.mt6789
+vendor/bin/hw/mt6789/android.hardware.graphics.allocator@4.0-service-mediatek.mt6789:vendor/bin/hw/android.hardware.graphics.allocator@4.0-service-mediatek.mt6789
 vendor/bin/hw/vendor.mediatek.hardware.pq@2.2-service
-vendor/lib/hw/android.hardware.graphics.allocator@4.0-impl-mediatek.so
-vendor/lib/hw/android.hardware.graphics.mapper@4.0-impl-mediatek.so
-vendor/lib/hw/gralloc.common.so
-vendor/lib/hw/vulkan.mali.so
-vendor/lib64/hw/android.hardware.graphics.allocator@4.0-impl-mediatek.so
-vendor/lib64/hw/android.hardware.graphics.mapper@4.0-impl-mediatek.so
-vendor/lib64/hw/gralloc.common.so
+vendor/lib/hw/mt6789/android.hardware.graphics.allocator@4.0-impl-mediatek.so:vendor/lib/hw/android.hardware.graphics.allocator@4.0-impl-mediatek.so
+vendor/lib/hw/mt6789/android.hardware.graphics.mapper@4.0-impl-mediatek.so:vendor/lib/hw/android.hardware.graphics.mapper@4.0-impl-mediatek.so
+vendor/lib/hw/mt6789/gralloc.common.so:vendor/lib/hw/gralloc.common.so
+vendor/lib/hw/mt6789/vulkan.mali.so:vendor/lib/hw/vulkan.mali.so
+vendor/lib/egl/mt6789/libGLES_mali.so:vendor/lib/egl/libGLES_mali.so
+vendor/lib/mt6789/arm.graphics-V1-ndk_platform.so:vendor/lib/arm.graphics-V1-ndk_platform.so
+vendor/lib64/hw/mt6789/android.hardware.graphics.allocator@4.0-impl-mediatek.so:vendor/lib64/hw/android.hardware.graphics.allocator@4.0-impl-mediatek.so
+vendor/lib64/hw/mt6789/android.hardware.graphics.mapper@4.0-impl-mediatek.so:vendor/lib64/hw/android.hardware.graphics.mapper@4.0-impl-mediatek.so
+vendor/lib64/hw/mt6789/gralloc.common.so:vendor/lib64/hw/gralloc.common.so
 vendor/lib64/hw/hwcomposer.mtk_common.so
-vendor/lib64/hw/vendor.mediatek.hardware.pq@2.15-impl.so
-vendor/lib64/hw/vulkan.mali.so
+vendor/lib64/hw/mt6789/vendor.mediatek.hardware.pq@2.15-impl.so:vendor/lib64/hw/vendor.mediatek.hardware.pq@2.15-impl.so
+vendor/lib64/mt6789/arm.graphics-V1-ndk_platform.so:vendor/lib64/arm.graphics-V1-ndk_platform.so
+vendor/lib64/libcomposer_ext.so
+vendor/lib64/libmml.so
+vendor/lib64/libpqframework.so
+vendor/lib64/mt6789/libpqparamparser.so:vendor/lib64/libpqparamparser.so
+vendor/lib64/vendor.mediatek.hardware.composer_ext@1.0.so
+vendor/lib64/vendor.mediatek.hardware.pq@2.0.so
+vendor/lib64/vendor.mediatek.hardware.pq@2.1.so
+vendor/lib64/vendor.mediatek.hardware.pq@2.2.so
+vendor/lib64/vendor.mediatek.hardware.pq@2.3.so
+vendor/lib64/vendor.mediatek.hardware.pq@2.4.so
+vendor/lib64/vendor.mediatek.hardware.pq@2.5.so
+vendor/lib64/vendor.mediatek.hardware.pq@2.6.so
+vendor/lib64/vendor.mediatek.hardware.pq@2.7.so
+vendor/lib64/vendor.mediatek.hardware.pq@2.8.so
+vendor/lib64/vendor.mediatek.hardware.pq@2.9.so
+vendor/lib64/vendor.mediatek.hardware.pq@2.10.so
+vendor/lib64/vendor.mediatek.hardware.pq@2.11.so
+vendor/lib64/vendor.mediatek.hardware.pq@2.12.so
+vendor/lib64/vendor.mediatek.hardware.pq@2.13.so
+vendor/lib64/vendor.mediatek.hardware.pq@2.14.so
+vendor/lib64/vendor.mediatek.hardware.pq@2.15.so
+vendor/lib64/hw/mt6789/vulkan.mali.so:vendor/lib64/hw/vulkan.mali.so
+vendor/lib64/egl/mt6789/libGLES_mali.so:vendor/lib64/egl/libGLES_mali.so
 
 # Media / sensors
 # Light, media OMX, memtrack, sensors multihal wrapper, USB, Wi-Fi, hostapd, and
@@ -35,34 +69,140 @@ vendor/lib64/hw/vulkan.mali.so
 vendor/bin/hw/android.hardware.media.c2@1.2-mediatek
 vendor/bin/hw/android.hardware.media.c2@1.2-mediatek-64b
 vendor/bin/hw/android.hardware.neuralnetworks-shim-service-mtk
+vendor/lib/libcodec2_mtk_c2store.so
+vendor/lib/libcodec2_mtk_vdec.so
+vendor/lib/libcodec2_mtk_venc.so
+vendor/lib/libcodec2_vpp_qt_plugin.so
+vendor/lib/libcodec2_vpp_rs_plugin.so
+vendor/lib/libformatter.so
+vendor/lib64/libcodec2_mtk_c2store.so
+vendor/lib64/libcodec2_mtk_vdec.so
+vendor/lib64/libcodec2_mtk_venc.so
+vendor/lib64/libcodec2_vpp_qt_plugin.so
+vendor/lib64/libcodec2_vpp_rs_plugin.so
+vendor/lib64/libformatter.so
 vendor/lib64/hw/sensors.mt6789.so
+vendor/lib64/libhfmanager.so
+vendor/lib64/libksensor.so
 
 # Daylight/inoco hardware services
 vendor/bin/hw/vendor.inoco.hardware.hall@1.0-service
 vendor/bin/hw/vendor.inoco.hardware.pogo@1.0-service
 vendor/bin/hw/vendor.inoco.hardware.touch@1.0-service
+vendor/lib64/vendor.inoco.hardware.hall@1.0.so
+vendor/lib64/vendor.inoco.hardware.pogo@1.0.so
+vendor/lib64/vendor.inoco.hardware.touch@1.0.so
 
 # MediaTek framework/vendor services
 vendor/bin/hw/vendor.mediatek.hardware.mmagent@1.1-service
 vendor/bin/hw/vendor.mediatek.hardware.mms@1.6-service
-vendor/bin/hw/vendor.mediatek.hardware.mtkpower@1.0-service
 vendor/bin/hw/vendor.mediatek.hardware.nvram@1.1-service
 vendor/lib/hw/vendor.mediatek.hardware.mms@1.6-impl.so
 vendor/lib/hw/vendor.mediatek.hardware.mtkpower@1.2-impl.so
 vendor/lib/hw/vendor.mediatek.hardware.nvram@1.1-impl.so
+vendor/lib/libJpgEncPipe.so
+vendor/lib/libfile_op.so
+vendor/lib/libged.so
+vendor/lib/libgralloc_extra.so
+vendor/lib/libgralloc_metadata.so
+vendor/lib/libgralloctypes_mtk.so
+vendor/lib/libgpu_aux.so
+vendor/lib/libion_mtk.so
+vendor/lib/libion_ulit.so
+vendor/lib/libjpeg-alpha-oal_vendor.so
+vendor/lib/libjpeg-alpha_vendor.so
+vendor/lib/libladder.so
+vendor/lib/libmml.so
+vendor/lib/libnvram.so;DISABLE_CHECKELF
+vendor/lib/libnvram_sec.so
+vendor/lib/libpqframework.so
+vendor/lib/libgpud.so
+vendor/lib/mt6789/libaiselector.so:vendor/lib/libaiselector.so
+vendor/lib/mt6789/libdpframework.so:vendor/lib/libdpframework.so
+vendor/lib/mt6789/libpq_prot.so:vendor/lib/libpq_prot.so
+vendor/lib/mt6789/libpqparamparser.so:vendor/lib/libpqparamparser.so
+vendor/lib/vendor.mediatek.hardware.mmagent@1.0.so
+vendor/lib/vendor.mediatek.hardware.mmagent@1.1.so
+vendor/lib/vendor.mediatek.hardware.mms@1.0.so
+vendor/lib/vendor.mediatek.hardware.mms@1.1.so
+vendor/lib/vendor.mediatek.hardware.mms@1.2.so
+vendor/lib/vendor.mediatek.hardware.mms@1.3.so
+vendor/lib/vendor.mediatek.hardware.mms@1.4.so
+vendor/lib/vendor.mediatek.hardware.mms@1.5.so
+vendor/lib/vendor.mediatek.hardware.mms@1.6.so
+vendor/lib/vendor.mediatek.hardware.nvram@1.0.so
+vendor/lib/vendor.mediatek.hardware.nvram@1.1.so
+vendor/lib/vendor.mediatek.hardware.pq@2.0.so
+vendor/lib/vendor.mediatek.hardware.pq@2.1.so
+vendor/lib/vendor.mediatek.hardware.pq@2.2.so
+vendor/lib/vendor.mediatek.hardware.pq@2.3.so
+vendor/lib/vendor.mediatek.hardware.pq@2.4.so
+vendor/lib/vendor.mediatek.hardware.pq@2.5.so
+vendor/lib/vendor.mediatek.hardware.pq@2.6.so
+vendor/lib/vendor.mediatek.hardware.pq@2.7.so
+vendor/lib/vendor.mediatek.hardware.pq@2.8.so
+vendor/lib/vendor.mediatek.hardware.pq@2.9.so
+vendor/lib/vendor.mediatek.hardware.pq@2.10.so
+vendor/lib/vendor.mediatek.hardware.pq@2.11.so
+vendor/lib/vendor.mediatek.hardware.pq@2.12.so
+vendor/lib/vendor.mediatek.hardware.pq@2.13.so
+vendor/lib/vendor.mediatek.hardware.pq@2.14.so
+vendor/lib/vendor.mediatek.hardware.pq@2.15.so
 vendor/lib64/hw/vendor.mediatek.hardware.mms@1.6-impl.so
 vendor/lib64/hw/vendor.mediatek.hardware.mtkpower@1.2-impl.so
 vendor/lib64/hw/vendor.mediatek.hardware.nvram@1.1-impl.so
+vendor/lib64/libJpgEncPipe.so
+vendor/lib64/libfile_op.so
+vendor/lib64/libged.so
+vendor/lib64/libgralloc_extra.so
+vendor/lib64/libgralloc_metadata.so
+vendor/lib64/libgralloctypes_mtk.so
+vendor/lib64/libgpu_aux.so
+vendor/lib64/libion_mtk.so
+vendor/lib64/libion_ulit.so
+vendor/lib64/libjpeg-alpha-oal_vendor.so
+vendor/lib64/libjpeg-alpha_vendor.so
+vendor/lib64/libladder.so
+vendor/lib64/libmmagent.so
+vendor/lib64/libnvram.so;DISABLE_CHECKELF
+vendor/lib64/libnvram_sec.so
+vendor/lib64/libgpud.so
+vendor/lib64/mt6789/libaiselector.so:vendor/lib64/libaiselector.so
+vendor/lib64/mt6789/libdpframework.so:vendor/lib64/libdpframework.so
+vendor/lib64/mt6789/libneuralnetworks_sl_driver_mtk_prebuilt.so:vendor/lib64/libneuralnetworks_sl_driver_mtk_prebuilt.so
+vendor/lib64/mt6789/libneuron_runtime.5.so:vendor/lib64/libneuron_runtime.5.so
+vendor/lib64/mt6789/libpq_prot.so:vendor/lib64/libpq_prot.so
+vendor/lib64/vendor.mediatek.hardware.mmagent@1.0.so
+vendor/lib64/vendor.mediatek.hardware.mmagent@1.1.so
+vendor/lib64/vendor.mediatek.hardware.mms@1.0.so
+vendor/lib64/vendor.mediatek.hardware.mms@1.1.so
+vendor/lib64/vendor.mediatek.hardware.mms@1.2.so
+vendor/lib64/vendor.mediatek.hardware.mms@1.3.so
+vendor/lib64/vendor.mediatek.hardware.mms@1.4.so
+vendor/lib64/vendor.mediatek.hardware.mms@1.5.so
+vendor/lib64/vendor.mediatek.hardware.mms@1.6.so
+vendor/lib64/vendor.mediatek.hardware.nvram@1.0.so
+vendor/lib64/vendor.mediatek.hardware.nvram@1.1.so
 
 # Hardware configuration
-vendor/etc/audio_effects.xml
-vendor/etc/audio_policy_configuration.xml
 vendor/etc/media_codecs.xml
 vendor/etc/media_codecs_performance.xml
-vendor/etc/permissions
-vendor/etc/sensors
-vendor/etc/vintf
-vendor/etc/wifi
+vendor/etc/sensors/hals.conf
+vendor/etc/vintf/manifest/manifest_media_c2_V1_2_default.xml
+vendor/etc/vintf/manifest/android.hardware.neuralnetworks-shim-service-mtk.xml
+
+# Init scripts for proprietary services
+vendor/etc/init/android.hardware.graphics.allocator@4.0-service-mediatek.rc
+vendor/etc/init/android.hardware.media.c2@1.2-mediatek.rc
+vendor/etc/init/android.hardware.neuralnetworks-shim-service-mtk.rc
+vendor/etc/init/vendor.inoco.hardware.hall@1.0-service.rc
+vendor/etc/init/vendor.inoco.hardware.pogo@1.0-service.rc
+vendor/etc/init/vendor.inoco.hardware.touch@1.0-service.rc
+vendor/etc/init/vendor.mediatek.hardware.mmagent@1.1-service.rc
+vendor/etc/init/vendor.mediatek.hardware.mms@1.6-service.rc
+vendor/etc/init/vendor.mediatek.hardware.mtkpower@1.0-init.rc
+vendor/etc/init/vendor.mediatek.hardware.nvram@1.1-sevice.rc
+vendor/etc/init/vendor.mediatek.hardware.pq@2.2-service.rc
 
 # TODO: Add camera, RIL/IMS, NFC, DRM/Widevine, and any stock APKs only after
 # confirming they are required for AOSP hardware functionality on jagar.

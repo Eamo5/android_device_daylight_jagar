@@ -108,7 +108,6 @@ widevine_driver.ko
 pmsr.ko
 spmtwam.ko
 hall_sensor.ko
-wlan_sdio_reset.ko
 btmtk_sdio_unify.ko
 wlan_mt7902_sdio_mt6789.ko
 connfem.ko

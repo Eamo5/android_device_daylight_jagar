@@ -112,7 +112,6 @@ mtk_charger_algorithm_class.ko
 pd_dbg_info.ko
 tcpc_class.ko
 tcpc_mt6375.ko
-tcpc_upm7610.ko
 mtk_chg_type_det.ko
 mtk_pd_adapter.ko
 mtk_pep40.ko
@@ -122,14 +121,11 @@ mtk_pep20.ko
 mtk_pep.ko
 mtk_charger_framework.ko
 rt_pd_manager.ko
-rt-regmap.ko
 mt6358_battery.ko
 pwm-mtk-disp.ko
-bbqX0kbd.ko
 leds-mtk.ko
 leds-mtk-disp.ko
 leds-mtk-pwm.ko
-ocp2131_drv.ko
 extcon-mtk-usb.ko
 mt6577_auxadc.ko
 mtk-dvfsrc-helper.ko
@@ -147,12 +143,7 @@ mediatek-cpufreq-hw.ko
 cfg80211.ko
 mac80211.ko
 tinysys-scmi.ko
-tkcore_drv.ko
-tkcore.ko
 mtk-mbox-mailbox.ko
 irq-dbg.ko
 mtk-socinfo.ko
-upm6722.ko
-hodafone_battery.ko
-upm6922_charger.ko
 wl2868c-regulator.ko

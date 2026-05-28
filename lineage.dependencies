@@ -10,5 +10,9 @@
   {
     "repository": "android_kernel_daylight_mt6789",
     "target_path": "kernel/daylight/mt6789"
+  },
+  {
+    "repository": "android_kernel_modules_daylight_mt6789",
+    "target_path": "vendor/mediatek/kernel_modules"
   }
 ]

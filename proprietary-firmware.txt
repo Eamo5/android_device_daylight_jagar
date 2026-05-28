@@ -1,6 +1,14 @@
 # Firmware images for Daylight DC-1 (jagar)
 #
-# Conservative baseline: do not ship firmware partitions in the ROM until the
-# OTA update policy is decided. Stock extracted images currently include:
-# dpm.img, gz.img, lk.img, mcupm.img, pi_img.img, scp.img, spmfw.img, sspm.img,
-# tee.img, dtbo.img, vbmeta*.img, boot.img, and vendor_boot.img.
+# Safe stock MTK firmware images for extract-utils firmware/radio packaging.
+# Do not package preloader_jagar.bin, misc.img, or para.img: preloader is a
+# high-risk boot-stage image, and misc/para contain device/boot control state.
+lk.img;AB
+tee.img;AB
+scp.img;AB
+sspm.img;AB
+spmfw.img;AB
+mcupm.img;AB
+pi_img.img;AB
+dpm.img;AB
+gz.img;AB

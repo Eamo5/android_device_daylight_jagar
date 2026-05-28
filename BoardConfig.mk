@@ -25,14 +25,28 @@ AB_OTA_UPDATER := true
 
 AB_OTA_PARTITIONS += \
     boot \
-    vendor_boot \
     dtbo \
     system \
     system_ext \
     product \
     vendor \
+    vendor_boot \
     vendor_dlkm \
     odm_dlkm \
+    vbmeta \
+    vbmeta_system \
+    vbmeta_vendor
+
+# MTK preloader images from stock are intentionally excluded because they are
+# not built by AOSP/Lineage; radio firmware images are packaged separately.
+PRODUCT_OTA_IMAGES += \
+    boot \
+    boot-debug \
+    dtbo \
+    super \
+    userdata \
+    vendor_boot \
+    vendor_boot-debug \
     vbmeta \
     vbmeta_system \
     vbmeta_vendor
@@ -76,10 +90,24 @@ DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := hardware/mediatek/vintf/mediatek_f
 # Kernel
 BOARD_KERNEL_IMAGE_NAME := Image.gz
 TARGET_KERNEL_ARCH := arm64
-# Temporary bring-up kernel until Daylight releases GPL kernel source.
-# TARGET_PREBUILT_KERNEL is deprecated but keeps stock vendor modules/dtbo ABI
-# matched during initial LineageOS bring-up.
-TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilts/kernel/Image.gz
+TARGET_KERNEL_NO_GCC := false
+TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-gnu-
+TARGET_KERNEL_SOURCE := kernel/daylight/mt6789
+# jagar.config is a device fragment layered over the GKI base config.
+TARGET_KERNEL_CONFIG := gki_defconfig jagar.config
+TARGET_KERNEL_DTB := mediatek/mt6789.dtb
+TARGET_DTB_LIST_WILDCARD := mediatek/mt6789
+BOARD_CUSTOM_DTBOIMG_MK := $(DEVICE_PATH)/build_dtbo.mk
+TARGET_KERNEL_ADDITIONAL_FLAGS += KCFLAGS="-Wno-error=deprecated-non-prototype -Wno-error=implicit-int -Wno-error=enum-compare -Wno-error=unused-but-set-variable -Wno-error=strict-prototypes -Wno-error=bitwise-instead-of-logical -Wno-error=single-bit-bitfield-constant-conversion"
+TARGET_KERNEL_ADDITIONAL_FLAGS += TOP=$(BUILD_TOP)/vendor/mediatek/kernel_modules
+TARGET_KERNEL_ADDITIONAL_FLAGS += CONFIG_MTK_PLATFORM=mt6789 MTK_COMBO_CHIP=MT7902 WLAN_CHIP_ID=MT7902 CONFIG_MTK_COMBO_WIFI_HIF=sdio MTK_CHIP_IF=sdio
+TARGET_KERNEL_EXT_MODULE_ROOT := vendor/mediatek/kernel_modules/vendor/mediatek/kernel_modules
+TARGET_KERNEL_EXT_MODULES += \
+    connectivity/connfem \
+    connectivity/bt/linux_v2 \
+    connectivity/wlan/core/gen4-mt79xx
+TARGET_MODULE_ALIASES += wlan_mt7902_sdio.ko:wlan_mt7902_sdio_mt6789.ko
+TARGET_MODULE_ALIASES += mali_kbase.ko:mali_kbase_mt6789.ko
 
 # Kernel Modules
 BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD := $(strip $(shell cat $(DEVICE_PATH)/kernel/modules.load.ramdisk))
