@@ -21,6 +21,7 @@ PRODUCT_VIRTUAL_AB_COMPRESSION := true
 
 PRODUCT_PACKAGES += \
     com.android.hardware.boot \
+    android.hardware.boot@1.2-service \
     android.hardware.boot-service.default_recovery
 
 PRODUCT_PACKAGES += \
@@ -94,7 +95,8 @@ PRODUCT_PACKAGES += \
 # Gatekeeper
 PRODUCT_PACKAGES += \
     android.hardware.gatekeeper@1.0-impl \
-    android.hardware.gatekeeper@1.0-service
+    android.hardware.gatekeeper@1.0-service \
+    android.hardware.security.keymint-service
 
 # GMS
 ifeq ($(WITH_GMS),true)
@@ -192,11 +194,11 @@ PRODUCT_PACKAGES += \
 
 # Rootdir
 PRODUCT_PACKAGES += \
-    fstab.mt8781 \
-    fstab.mt8781.vendor_ramdisk \
+    fstab.mt6789 \
+    fstab.mt6789.vendor_ramdisk \
     init.cgroup.rc \
     init.connectivity.rc \
-    init.mt8781.rc \
+    init.mt6789.rc \
     init.mt8781.usb.rc \
     init.mtkgki.rc \
     init.project.rc \

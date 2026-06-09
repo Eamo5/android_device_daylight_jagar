@@ -11,6 +11,14 @@ prebuilt_etc {
 }
 
 prebuilt_etc {
+    name: "fstab.mt6789",
+    src: "etc/fstab.mt8781",
+    filename: "fstab.mt6789",
+    vendor: true,
+    vendor_ramdisk_available: true,
+}
+
+prebuilt_etc {
     name: "init.cgroup.rc",
     src: "etc/init.cgroup.rc",
     sub_dir: "init/hw",
@@ -27,6 +35,14 @@ prebuilt_etc {
 prebuilt_etc {
     name: "init.mt8781.rc",
     src: "etc/init.mt8781.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.mt6789.rc",
+    src: "etc/init.mt8781.rc",
+    filename: "init.mt6789.rc",
     sub_dir: "init/hw",
     vendor: true,
 }

@@ -1,8 +1,20 @@
 version 1
-flash boot
-flash dtbo
-flash vendor_boot
-flash --apply-vbmeta vbmeta
+# jagar's bootloader misreports has-slot for several A/B partitions; use explicit suffixes.
+flash --apply-vbmeta vbmeta_a vbmeta.img
+flash vbmeta_system_a vbmeta_system.img
+flash vbmeta_vendor_a vbmeta_vendor.img
+flash spmfw_a spmfw.img
+flash pi_img_a pi_img.img
+flash dpm_a dpm.img
+flash scp_a scp.img
+flash sspm_a sspm.img
+flash mcupm_a mcupm.img
+flash gz_a gz.img
+flash lk_a lk.img
+flash boot_a boot.img
+flash vendor_boot_a vendor_boot.img
+flash dtbo_a dtbo.img
+flash tee_a tee.img
 flash super super.img
 if-wipe erase userdata
 if-wipe erase metadata
